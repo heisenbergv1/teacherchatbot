@@ -1,5 +1,4 @@
 import { config } from "dotenv";
-import { drizzle } from "drizzle-orm/postgres-js";
 import postgres from "postgres";
 
 config({ path: ".env.local" });
@@ -10,7 +9,6 @@ const runMigrate = async () => {
   }
 
   const sql = postgres(process.env.POSTGRES_URL, { max: 1 });
-  const db = drizzle(sql);
 
   console.log("🔥 Dropping public schema...");
   await sql`DROP SCHEMA public CASCADE`;

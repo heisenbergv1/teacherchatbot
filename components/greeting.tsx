@@ -35,8 +35,8 @@ export const Greeting = () => {
         initial={{ opacity: 0, y: 10 }}
         transition={{ delay: 0.6 }}
       >
-        🤖✨ I’m your K-12 learning buddy!  
-        Let’s jump into 📐 Math, 🔬 Science, 📘 English, Filipino, and 🏛️ Social Studies!
+        🤖✨ I’m your K-12 learning buddy! Let’s jump into 📐 Math, 🔬 Science,
+        📘 English, Filipino, and 🏛️ Social Studies!
       </motion.div>
     </div>
   );
