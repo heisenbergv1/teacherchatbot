@@ -16,7 +16,7 @@
     "db:pull": "drizzle-kit pull",
     "db:check": "drizzle-kit check",
     "db:up": "drizzle-kit up",
-    "test": "cross-env PLAYWRIGHT=True && pnpm exec playwright test"
+    "test": "cross-env PLAYWRIGHT=True && pnpm exec playwright test --headed"
   },
   "dependencies": {
     "@ai-sdk/anthropic": "^3.0.39",
