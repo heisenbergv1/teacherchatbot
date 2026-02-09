@@ -16,14 +16,14 @@ export function SubmitButton({
 
   return (
     <Button
-      type={disabled ? "button" : "submit"}
-      disabled={disabled}
       aria-disabled={disabled}
       className="relative w-full h-10 rounded-lg
                  bg-gradient-to-r from-blue-400 via-teal-400 to-green-400
                  text-white font-medium shadow-md hover:shadow-lg
                  transition-all duration-300 transform hover:-translate-y-0.5
                  active:scale-95"
+      disabled={disabled}
+      type={disabled ? "button" : "submit"}
     >
       {children}
 

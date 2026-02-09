@@ -9,7 +9,8 @@ import { SessionProvider } from "next-auth/react";
 export const metadata: Metadata = {
   metadataBase: new URL("https://k12teacherchatbot.vercel.app"),
   title: "K-12 Teacher Chatbot",
-  description: "Interactive K-12 Teacher Chatbot for Math, Science, English, Filipino, and AP subjects. Get help, guidance, and practice exercises tailored for students in the Philippines.",
+  description:
+    "Interactive K-12 Teacher Chatbot for Math, Science, English, Filipino, and AP subjects. Get help, guidance, and practice exercises tailored for students in the Philippines.",
 };
 
 export const viewport = {

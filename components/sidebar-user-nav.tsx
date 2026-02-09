@@ -19,9 +19,9 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
 import { guestRegex } from "@/lib/constants";
+import { cn } from "@/lib/utils";
 import { LoaderIcon } from "./icons";
 import { toast } from "./toast";
-import { cn } from "@/lib/utils";
 
 export function SidebarUserNav({ user }: { user: User }) {
   const router = useRouter();
@@ -67,24 +67,28 @@ export function SidebarUserNav({ user }: { user: User }) {
                   src={`https://avatar.vercel.sh/${user.email}`}
                   width={24}
                 />
-                <span className="truncate">{isGuest ? "Guest" : user?.email}</span>
+                <span className="truncate">
+                  {isGuest ? "🐣 New Kid Here" : user?.email}
+                </span>
                 <ChevronUp className="ml-auto" />
               </SidebarMenuButton>
             )}
           </DropdownMenuTrigger>
 
           <DropdownMenuContent
-            side="top"
             className={cn(
               "w-(--radix-popper-anchor-width) rounded-lg shadow-lg border border-gray-200 p-2",
               "bg-gradient-to-b from-blue-50 via-teal-50 to-green-50 dark:from-gray-800 dark:via-gray-700 dark:to-gray-600"
             )}
             data-testid="user-nav-menu"
+            side="top"
           >
             <DropdownMenuItem
               className="cursor-pointer font-medium hover:text-white hover:bg-gradient-to-r from-blue-400 via-teal-400 to-green-400 rounded-md transition-all duration-200"
               data-testid="user-nav-item-theme"
-              onSelect={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
+              onSelect={() =>
+                setTheme(resolvedTheme === "dark" ? "light" : "dark")
+              }
             >
               {`Toggle ${resolvedTheme === "light" ? "dark" : "light"} mode`}
             </DropdownMenuItem>
@@ -98,7 +102,8 @@ export function SidebarUserNav({ user }: { user: User }) {
                   if (status === "loading") {
                     toast({
                       type: "error",
-                      description: "Checking authentication status, please try again!",
+                      description:
+                        "Checking authentication status, please try again!",
                     });
                     return;
                   }

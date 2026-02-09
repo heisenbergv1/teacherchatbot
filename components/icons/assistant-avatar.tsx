@@ -18,12 +18,12 @@ export function AssistantAvatar({
 }: AssistantAvatarProps) {
   return (
     <Image
-      src={src}
       alt={alt}
-      width={size}
-      height={size}
       className={cn("object-cover", className)}
+      height={size}
       priority
+      src={src}
+      width={size}
     />
   );
 }

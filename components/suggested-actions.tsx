@@ -1,13 +1,13 @@
 "use client";
 
 import type { UseChatHelpers } from "@ai-sdk/react";
+import classNames from "classnames";
 import { motion } from "framer-motion";
 import { memo } from "react";
 import type { ChatMessage } from "@/lib/types";
+import { cn } from "@/lib/utils";
 import { Suggestion } from "./elements/suggestion";
 import type { VisibilityType } from "./visibility-selector";
-import { cn } from "@/lib/utils";
-import classNames from "classnames";
 
 type SuggestedActionsProps = {
   chatId: string;
@@ -18,13 +18,13 @@ type SuggestedActionsProps = {
 function PureSuggestedActions({ chatId, sendMessage }: SuggestedActionsProps) {
   const suggestedActions = [
     // Math
-    "Show me how to find the area of a triangle",
+    "📐 Math Magic: Show me how to find the area of a triangle",
     // English
-    "Give me tips to improve my essay introduction",
+    "✍️ English Power: What are nouns and adverbs?",
     // Science
-    "Explain how photosynthesis works in simple terms",
+    "🌱 Science Spark: Explain how photosynthesis works",
     // Araling Panlipunan (AP)
-    "Tell me about the Philippine Revolution in 3 sentences",
+    "📜 AP Time Travel: Tell me about the Philippine Revolution",
   ];
 
   return (
@@ -43,9 +43,9 @@ function PureSuggestedActions({ chatId, sendMessage }: SuggestedActionsProps) {
           <Suggestion
             className={cn(
               "group w-full h-auto whitespace-normal p-3 rounded-lg font-medium " +
-              "bg-gradient-to-r from-blue-400 via-teal-400 to-green-400 " +
-              "hover:from-teal-400 hover:via-green-400 hover:to-yellow-300 " +
-              "shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5 active:scale-95 cursor-pointer",
+                "bg-gradient-to-r from-blue-400 via-teal-400 to-green-400 " +
+                "hover:from-teal-400 hover:via-green-400 hover:to-yellow-300 " +
+                "shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5 active:scale-95 cursor-pointer",
               classNames
             )}
             onClick={(suggestion) => {

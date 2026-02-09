@@ -17,10 +17,13 @@ export async function proxy(request: NextRequest) {
     return NextResponse.next();
   }
 
+  // patch: allow token retrieval on localhost http
+  const isLocalhost = request.nextUrl.hostname === "localhost";
+
   const token = await getToken({
     req: request,
     secret: process.env.AUTH_SECRET,
-    secureCookie: !isDevelopmentEnvironment,
+    secureCookie: !isDevelopmentEnvironment && !isLocalhost,
   });
 
   if (!token) {

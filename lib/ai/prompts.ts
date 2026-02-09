@@ -178,7 +178,7 @@ const parseJsonRecordFromEnv = (envKey: string) => {
   } catch (error) {
     console.warn(
       `[prompts] Failed to parse ${envKey} as JSON. Falling back to defaults.`,
-      error,
+      error
     );
   }
 
@@ -196,16 +196,15 @@ const parseCacheNumber = (value: string | undefined) => {
   }
 
   console.warn(
-    `[prompts] Ignoring invalid numeric cache value: "${value}". Expected a non-negative number.`,
+    `[prompts] Ignoring invalid numeric cache value: "${value}". Expected a non-negative number.`
   );
 
   return undefined;
 };
 
-
 const buildGatewayCacheParameters = () => {
   const explicitParameters = parseJsonRecordFromEnv(
-    "ASSISTANT_PROVIDER_CACHE_PARAMETERS",
+    "ASSISTANT_PROVIDER_CACHE_PARAMETERS"
   );
 
   if (explicitParameters) {
@@ -224,8 +223,7 @@ const buildGatewayCacheParameters = () => {
     cacheConfig.key = cacheKey;
   }
 
-  const tags = process.env.ASSISTANT_PROVIDER_CACHE_TAGS
-    ?.split(",")
+  const tags = process.env.ASSISTANT_PROVIDER_CACHE_TAGS?.split(",")
     .map((tag) => tag.trim())
     .filter(Boolean);
   if (tags && tags.length > 0) {
@@ -233,7 +231,7 @@ const buildGatewayCacheParameters = () => {
   }
 
   const ttlSeconds = parseCacheNumber(
-    process.env.ASSISTANT_PROVIDER_CACHE_TTL_SECONDS?.trim(),
+    process.env.ASSISTANT_PROVIDER_CACHE_TTL_SECONDS?.trim()
   );
   if (ttlSeconds !== undefined) {
     cacheConfig.ttlSeconds = ttlSeconds;
@@ -258,7 +256,7 @@ const buildProviderCacheOptions = (): any => {
   }
 
   const explicitProviderOptions = parseJsonRecordFromEnv(
-    "ASSISTANT_PROVIDER_CACHE_OPTIONS",
+    "ASSISTANT_PROVIDER_CACHE_OPTIONS"
   );
   if (explicitProviderOptions) {
     return explicitProviderOptions;

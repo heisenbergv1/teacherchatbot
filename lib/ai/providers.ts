@@ -1,3 +1,4 @@
+import { createAnthropic } from "@ai-sdk/anthropic";
 import { gateway } from "@ai-sdk/gateway";
 import {
   customProvider,
@@ -5,7 +6,6 @@ import {
   wrapLanguageModel,
 } from "ai";
 import { isTestEnvironment } from "../constants";
-import { createAnthropic } from '@ai-sdk/anthropic';
 
 const THINKING_SUFFIX_REGEX = /-thinking$/;
 
@@ -18,14 +18,20 @@ const desiredProviderMode =
 
 const createAnthropicProvider = () => {
   const apiKey = process.env.ANTHROPIC_API_KEY?.trim();
-  const chatModelId = process.env.ASSISTANT_ANTHROPIC_CHAT_MODEL?.trim() ?? "claude-3-5-sonnet-latest";
-  const reasoningModelId = process.env.ASSISTANT_ANTHROPIC_REASONING_MODEL?.trim() ?? chatModelId;
-  const titleModelId = process.env.ASSISTANT_ANTHROPIC_TITLE_MODEL?.trim() ?? "claude-3-5-haiku-latest";
-  const artifactModelId = process.env.ASSISTANT_ANTHROPIC_ARTIFACT_MODEL?.trim() ?? titleModelId;
+  const chatModelId =
+    process.env.ASSISTANT_ANTHROPIC_CHAT_MODEL?.trim() ??
+    "claude-3-5-sonnet-latest";
+  const reasoningModelId =
+    process.env.ASSISTANT_ANTHROPIC_REASONING_MODEL?.trim() ?? chatModelId;
+  const titleModelId =
+    process.env.ASSISTANT_ANTHROPIC_TITLE_MODEL?.trim() ??
+    "claude-3-5-haiku-latest";
+  const artifactModelId =
+    process.env.ASSISTANT_ANTHROPIC_ARTIFACT_MODEL?.trim() ?? titleModelId;
 
   if (!apiKey) {
     console.warn(
-      "[providers] ANTHROPIC_API_KEY is not set. Falling back to the AI Gateway provider.",
+      "[providers] ANTHROPIC_API_KEY is not set. Falling back to the AI Gateway provider."
     );
     return null;
   }
@@ -112,7 +118,7 @@ export function getLanguageModel(modelId: string) {
     });
   }
 
-  return myProvider.languageModel('chat-model');
+  return myProvider.languageModel("chat-model");
 }
 
 export function getTitleModel() {

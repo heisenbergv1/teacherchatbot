@@ -75,7 +75,7 @@ export function VisibilitySelector({
         >
           {selectedVisibility?.icon}
           <span className="md:sr-only">{selectedVisibility?.label}</span>
-          <ChevronDownIcon className="w-4 h-4" />
+          <ChevronDownIcon size={16} />
         </Button>
       </DropdownMenuTrigger>
 
@@ -85,14 +85,14 @@ export function VisibilitySelector({
       >
         {visibilities.map((visibility) => (
           <DropdownMenuItem
-            key={visibility.id}
+            className="group/item flex flex-row items-center justify-between gap-4 rounded-md px-3 py-2 hover:bg-blue-50 dark:hover:bg-gray-700 cursor-pointer transition-colors duration-200"
             data-active={visibility.id === visibilityType}
             data-testid={`visibility-selector-item-${visibility.id}`}
+            key={visibility.id}
             onSelect={() => {
               setVisibilityType(visibility.id);
               setOpen(false);
             }}
-            className="group/item flex flex-row items-center justify-between gap-4 rounded-md px-3 py-2 hover:bg-blue-50 dark:hover:bg-gray-700 cursor-pointer transition-colors duration-200"
           >
             <div className="flex flex-col items-start gap-1">
               <span className="font-semibold text-gray-900 dark:text-gray-100">
@@ -105,7 +105,7 @@ export function VisibilitySelector({
               )}
             </div>
             <div className="text-blue-600 opacity-0 group-data-[active=true]/item:opacity-100 transition-opacity duration-200">
-              <CheckCircleFillIcon className="w-5 h-5" />
+              <CheckCircleFillIcon size={16} />
             </div>
           </DropdownMenuItem>
         ))}

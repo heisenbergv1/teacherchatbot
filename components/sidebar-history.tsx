@@ -225,7 +225,10 @@ export function SidebarHistory({ user }: { user: User | undefined }) {
 
                 const groupedChats = groupChatsByDate(chatsFromHistory);
 
-                const renderChatSection = (label: string, chats: typeof groupedChats.today) => (
+                const renderChatSection = (
+                  label: string,
+                  chats: typeof groupedChats.today
+                ) => (
                   <div>
                     <div className="px-2 py-1 text-xs font-medium text-gray-500 dark:text-gray-400">
                       {label}
@@ -247,11 +250,19 @@ export function SidebarHistory({ user }: { user: User | undefined }) {
 
                 return (
                   <div className="flex flex-col gap-6">
-                    {groupedChats.today.length > 0 && renderChatSection("Today", groupedChats.today)}
-                    {groupedChats.yesterday.length > 0 && renderChatSection("Yesterday", groupedChats.yesterday)}
-                    {groupedChats.lastWeek.length > 0 && renderChatSection("Last 7 days", groupedChats.lastWeek)}
-                    {groupedChats.lastMonth.length > 0 && renderChatSection("Last 30 days", groupedChats.lastMonth)}
-                    {groupedChats.older.length > 0 && renderChatSection("Older than last month", groupedChats.older)}
+                    {groupedChats.today.length > 0 &&
+                      renderChatSection("Today", groupedChats.today)}
+                    {groupedChats.yesterday.length > 0 &&
+                      renderChatSection("Yesterday", groupedChats.yesterday)}
+                    {groupedChats.lastWeek.length > 0 &&
+                      renderChatSection("Last 7 days", groupedChats.lastWeek)}
+                    {groupedChats.lastMonth.length > 0 &&
+                      renderChatSection("Last 30 days", groupedChats.lastMonth)}
+                    {groupedChats.older.length > 0 &&
+                      renderChatSection(
+                        "Older than last month",
+                        groupedChats.older
+                      )}
                   </div>
                 );
               })()}
@@ -259,13 +270,16 @@ export function SidebarHistory({ user }: { user: User | undefined }) {
 
           <motion.div
             onViewportEnter={() => {
-              if (!isValidating && !hasReachedEnd) setSize((size) => size + 1);
+              if (!isValidating && !hasReachedEnd) {
+                setSize((size) => size + 1);
+              }
             }}
           />
 
           {hasReachedEnd ? (
             <div className="mt-8 flex w-full items-center justify-center gap-2 px-2 text-sm text-gray-500 dark:text-gray-400">
-              You've read all your previous chats! Ready to start a new adventure in learning?
+              You've read all your previous chats! Ready to start a new
+              adventure in learning?
             </div>
           ) : (
             <div className="mt-8 flex items-center gap-2 px-2 text-gray-500 dark:text-gray-400">
@@ -283,7 +297,8 @@ export function SidebarHistory({ user }: { user: User | undefined }) {
           <AlertDialogHeader>
             <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
             <AlertDialogDescription>
-              This action cannot be undone. This will permanently delete your chat and remove it from our servers.
+              This action cannot be undone. This will permanently delete your
+              chat and remove it from our servers.
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>

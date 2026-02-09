@@ -173,20 +173,19 @@ export const PromptInputSubmit = ({
     Icon = <XIcon className="size-4" />;
   }
 
-return (
-  <Button
-    className={cn(
-      "size-8 rounded-full bg-gradient-to-r from-blue-400 via-teal-400 to-green-400 text-white shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5 active:scale-95 disabled:from-gray-300 disabled:via-gray-300 disabled:to-gray-300 disabled:text-gray-500",
-      className
-    )}
-    size={size}
-    type="submit"
-    {...props}
-  >
-    {children ?? Icon}
-  </Button>
-);
-
+  return (
+    <Button
+      className={cn(
+        "size-8 rounded-full bg-gradient-to-r from-blue-400 via-teal-400 to-green-400 text-white shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5 active:scale-95 disabled:from-gray-300 disabled:via-gray-300 disabled:to-gray-300 disabled:text-gray-500",
+        className
+      )}
+      size={size}
+      type="submit"
+      {...props}
+    >
+      {children ?? Icon}
+    </Button>
+  );
 };
 
 export type PromptInputModelSelectProps = ComponentProps<typeof Select>;

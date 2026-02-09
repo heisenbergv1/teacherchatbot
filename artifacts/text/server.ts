@@ -49,7 +49,13 @@ export const textDocumentHandler = createDocumentHandler<"text">({
             content: document.content,
           },
         },
-        anthropic: { thinking: { type: "enabled", budgetTokens: 8000, cacheControl: { type: 'ephemeral' } } }
+        anthropic: {
+          thinking: {
+            type: "enabled",
+            budgetTokens: 8000,
+            cacheControl: { type: "ephemeral" },
+          },
+        },
       },
     });
 

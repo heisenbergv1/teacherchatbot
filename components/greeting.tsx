@@ -8,9 +8,6 @@ export const Greeting = () => {
     >
       <motion.div
         animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: 10 }}
-        initial={{ opacity: 0, y: 10 }}
-        transition={{ delay: 0.5 }}
         className="
           text-center
           font-bold text-2xl md:text-3xl
@@ -20,22 +17,26 @@ export const Greeting = () => {
           hover:animate-vibrate
           transition-all duration-300
         "
+        exit={{ opacity: 0, y: 10 }}
+        initial={{ opacity: 0, y: 10 }}
+        transition={{ delay: 0.5 }}
       >
-        Welcome, Young Learner!
+        🚀 Welcome, Young Learner! 🧠✨
       </motion.div>
 
       <motion.div
         animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: 10 }}
-        initial={{ opacity: 0, y: 10 }}
-        transition={{ delay: 0.6 }}
         className="
           text-center
           text-lg md:text-xl
           text-gray-700 dark:text-gray-300
         "
+        exit={{ opacity: 0, y: 10 }}
+        initial={{ opacity: 0, y: 10 }}
+        transition={{ delay: 0.6 }}
       >
-        I'm your K-12 assistant — ready to explore Math, Science, English, Filipino, or Social Studies with you!
+        🤖✨ I’m your K-12 learning buddy!  
+        Let’s jump into 📐 Math, 🔬 Science, 📘 English, Filipino, and 🏛️ Social Studies!
       </motion.div>
     </div>
   );
