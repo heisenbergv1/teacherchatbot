@@ -58,7 +58,7 @@ export default function Page() {
             Sign In
           </h3>
           <p className="text-gray-600 text-sm dark:text-zinc-400">
-            Use your email and password to sign in
+            Hop in using your email and magical password to sign in!
           </p>
         </div>
 
@@ -67,14 +67,14 @@ export default function Page() {
           <SubmitButton isSuccessful={isSuccessful}>Sign in</SubmitButton>
           {/* Sign up prompt */}
           <p className="mt-4 text-center text-gray-600 dark:text-zinc-400 text-sm">
-            {"Don't have an account? "}
+            {"No rocket ship yet? "}
             <Link
               className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-teal-400 to-green-400 hover:underline"
               href="/register"
             >
               Sign up
             </Link>
-            {" for free."}
+            {" Grab your superhero cape and sign up!."}
           </p>
         </AuthForm>
       </div>

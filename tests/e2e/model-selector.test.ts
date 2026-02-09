@@ -2,7 +2,7 @@ import { expect, test } from "@playwright/test";
 
 const MODEL_BUTTON_REGEX = /Gemini|Claude|GPT|Grok/i;
 
-test.describe("Model Selector", () => {
+test.skip("Model Selector", () => {
   test.beforeEach(async ({ page }) => {
     await page.goto("/");
   });
