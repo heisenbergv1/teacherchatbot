@@ -66,14 +66,13 @@ export default function Page() {
 
           {/* Sign in prompt */}
           <p className="mt-4 text-center text-gray-600 dark:text-zinc-400 text-sm">
-            Already have an account?{" "}
+            Already on board? Unlock your adventure and {" "}
             <Link
               className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-teal-400 to-green-400 hover:underline"
               href="/login"
             >
-              Sign in
+              Sign in!
             </Link>
-            {" instead."}
           </p>
         </AuthForm>
       </div>

@@ -67,14 +67,13 @@ export default function Page() {
           <SubmitButton isSuccessful={isSuccessful}>Sign in</SubmitButton>
           {/* Sign up prompt */}
           <p className="mt-4 text-center text-gray-600 dark:text-zinc-400 text-sm">
-            {"No rocket ship yet? "}
+            {"No rocket ship yet? Grab your superhero cape and "}
             <Link
               className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-teal-400 to-green-400 hover:underline"
               href="/register"
             >
-              Sign up
+              Sign up!
             </Link>
-            {" Grab your superhero cape and sign up!."}
           </p>
         </AuthForm>
       </div>
