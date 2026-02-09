@@ -84,7 +84,12 @@ export function SidebarUserNav({ user }: { user: User }) {
             side="top"
           >
             <DropdownMenuItem
-              className="cursor-pointer font-medium hover:text-white hover:bg-gradient-to-r from-blue-400 via-teal-400 to-green-400 rounded-md transition-all duration-200"
+              className="cursor-pointer font-medium rounded-md transition-all duration-200
+                        data-[highlighted]:text-white
+                        data-[highlighted]:bg-gradient-to-r
+                        data-[highlighted]:from-blue-400
+                        data-[highlighted]:via-teal-400
+                        data-[highlighted]:to-green-400"
               data-testid="user-nav-item-theme"
               onSelect={() =>
                 setTheme(resolvedTheme === "dark" ? "light" : "dark")
@@ -97,7 +102,12 @@ export function SidebarUserNav({ user }: { user: User }) {
 
             <DropdownMenuItem asChild data-testid="user-nav-item-auth">
               <button
-                className="w-full cursor-pointer font-medium hover:text-white hover:bg-gradient-to-r from-blue-400 via-teal-400 to-green-400 rounded-md px-2 py-1 transition-all duration-200"
+                className="w-full cursor-pointer font-medium rounded-md px-2 py-1 transition-all duration-200
+                          data-[highlighted]:text-white
+                          data-[highlighted]:bg-gradient-to-r
+                          data-[highlighted]:from-blue-400
+                          data-[highlighted]:via-teal-400
+                          data-[highlighted]:to-green-400"
                 onClick={() => {
                   if (status === "loading") {
                     toast({
