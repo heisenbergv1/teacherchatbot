@@ -16,12 +16,13 @@ import {
   ToolInput,
   ToolOutput,
 } from "./elements/tool";
-import { SparklesIcon } from "./icons";
+import { MessageIcon, SparklesIcon } from "./icons";
 import { MessageActions } from "./message-actions";
 import { MessageEditor } from "./message-editor";
 import { MessageReasoning } from "./message-reasoning";
 import { PreviewAttachment } from "./preview-attachment";
 import { Weather } from "./weather";
+import { CpuIcon } from "lucide-react";
 
 const PurePreviewMessage = ({
   addToolApprovalResponse,
@@ -65,8 +66,18 @@ const PurePreviewMessage = ({
         })}
       >
         {message.role === "assistant" && (
-          <div className="-mt-1 flex size-8 shrink-0 items-center justify-center rounded-full bg-background ring-1 ring-border">
-            <SparklesIcon size={14} />
+          <div
+            className={cn(
+              "group -mt-1 flex size-8 shrink-0 items-center justify-center rounded-full " +
+                "bg-gradient-to-r from-blue-400 via-teal-400 to-green-400 " +
+                "hover:from-teal-400 hover:via-green-400 hover:to-yellow-300 " +
+                "shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5 active:scale-95 ring-1 ring-border cursor-pointer"
+            )}
+          >
+            <CpuIcon
+              size={14}
+              className="text-white dark:text-gray-100 group-hover:text-gray-900 dark:group-hover:text-gray-100"
+            />
           </div>
         )}
 
@@ -372,8 +383,18 @@ export const ThinkingMessage = () => {
     >
       <div className="flex items-start justify-start gap-3">
         <div className="-mt-1 flex size-8 shrink-0 items-center justify-center rounded-full bg-background ring-1 ring-border">
-          <div className="animate-pulse">
-            <SparklesIcon size={14} />
+          <div
+            className={cn(
+              "group -mt-1 flex size-8 shrink-0 items-center justify-center rounded-full " +
+                "bg-gradient-to-r from-blue-400 via-teal-400 to-green-400 " +
+                "hover:from-teal-400 hover:via-green-400 hover:to-yellow-300 " +
+                "shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5 active:scale-95 ring-1 ring-border cursor-pointer"
+            )}
+          >
+            <CpuIcon
+              size={14}
+              className="text-white dark:text-gray-100 group-hover:text-gray-900 dark:group-hover:text-gray-100"
+            />
           </div>
         </div>
 
