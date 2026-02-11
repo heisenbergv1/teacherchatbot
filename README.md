@@ -10,12 +10,26 @@ This project is a modern web-based chat application with AI-powered responses, u
 
 ## Tech Stack
 
-- **Next.js (App Router)** – Routing, Server Components, Server Actions
-- **React** – UI and client-side interactions
-- **Tailwind CSS + shadcn/ui** – Styling and accessible UI components
-- **PostgreSQL** – Persistent storage for users and chats
-- **Authentication** – Session-based auth for user accounts
-- **LLM Provider** – Configurable via environment variables
+### Frontend
+
+* **Next.js (App Router)** – Routing, layouts, Server Components
+* **React** – UI rendering and client-side interactions
+* **Tailwind CSS** – Utility-first styling
+* **shadcn/ui** – Accessible component primitives
+* **Lucide Icons** – Icon system
+
+### Backend
+
+* **Node.js (Next.js server runtime)** – API routes, Server Actions, middleware
+* **PostgreSQL (via Supabase or direct PG driver)** – Persistent storage (users, chats, messages)
+* **Authentication (NextAuth.js)** – Session-based authentication with JWT
+* **LLM Provider (OpenAI / Anthropic / etc.)** – AI inference via environment-configured provider
+* **Edge / Middleware** – Route protection and request interception
+
+### Database Layer
+
+* **Supabase (optional integration)** – Hosted PostgreSQL + auth helpers
+* **Drizzle ORM / SQL** (if used in your setup) – Type-safe database access
 
 ---
 
