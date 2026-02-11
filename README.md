@@ -24,12 +24,11 @@ This project is a modern web-based chat application with AI-powered responses, u
 * **PostgreSQL (via Supabase or direct PG driver)** – Persistent storage (users, chats, messages)
 * **Authentication (NextAuth.js)** – Session-based authentication with JWT
 * **LLM Provider (OpenAI / Anthropic / etc.)** – AI inference via environment-configured provider
-* **Edge / Middleware** – Route protection and request interception
 
 ### Database Layer
 
 * **Supabase (optional integration)** – Hosted PostgreSQL + auth helpers
-* **Drizzle ORM / SQL** (if used in your setup) – Type-safe database access
+* **Drizzle ORM / SQL** – Type-safe database access
 
 ---
 
